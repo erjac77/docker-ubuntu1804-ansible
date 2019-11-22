@@ -18,3 +18,5 @@ script:
   - docker run -d --name ansible-container docker-ansible
   # Verify Ansible
   - docker exec --tty ansible-container env TERM=xterm ansible --version
+  # Verify Molecule
+  - docker exec --tty ansible-container env TERM=xterm molecule --version
