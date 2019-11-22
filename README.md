@@ -6,7 +6,7 @@
 
 A Ubuntu 18.04 LTS (Bionic) Docker container image for Ansible playbook and role testing.
 
-> This image uses [Molecule](https://molecule.readthedocs.io/en/stable/) to aid in the development and testing of Ansible roles and [docker systemctl replacement](https://github.com/gdraheim/docker-systemctl-replacement) script to execute systemctl commands without systemd.
+> This image uses [docker systemctl replacement](https://github.com/gdraheim/docker-systemctl-replacement) script to execute systemctl commands without systemd.
 
 ## Usage
 
@@ -25,8 +25,6 @@ A Ubuntu 18.04 LTS (Bionic) Docker container image for Ansible playbook and role
    a. `docker exec --tty [container_name] env TERM=xterm ansible --version`
 
    b. `docker exec --tty [container_name] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml`
-
-   c. `docker exec --tty [container_name] env TERM=xterm molecule test`
 
 ## Warnings
 

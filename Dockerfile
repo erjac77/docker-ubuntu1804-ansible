@@ -4,11 +4,11 @@ LABEL maintainer="Eric Jacob"
 
 # Update APT cache and install dependencies
 RUN apt-get update
-RUN apt-get install -y python sudo bash ca-certificates iproute2 python-pip libssl-dev
+RUN apt-get install -y python sudo bash ca-certificates iproute2 python-pip
 RUN apt-get clean
 
-# Install Ansible, Python Docker driver and Molecule via pip
-RUN pip install ansible docker molecule
+# Install Ansible via pip
+RUN pip install ansible
 
 # Copy Docker systemctl replacement script
 # to execute systemctl commands without systemd
