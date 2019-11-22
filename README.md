@@ -1,12 +1,12 @@
 # Docker Container Image: Ubuntu 18.04 LTS (Bionic) with Ansible and Molecule
 
 [![Build Status](https://travis-ci.com/erjac77/docker-ubuntu1804-ansible.svg?branch=master)](https://travis-ci.com/erjac77/docker-ubuntu1804-ansible)
-[![Docker Build Status](https://img.shields.io/docker/build/erjac77/docker-ubuntu1804-ansible)](https://hub.docker.com/r/erjac77/docker-ubuntu1804-ansible)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/erjac77/docker-ubuntu1804-ansible.svg)](https://hub.docker.com/r/erjac77/docker-ubuntu1804-ansible)
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 A Ubuntu 18.04 LTS (Bionic) Docker container image for Ansible playbook and role testing.
 
-This image uses the [docker systemctl replacement](https://github.com/gdraheim/docker-systemctl-replacement) script to execute systemctl commands without systemd.
+> This image uses [Molecule](https://molecule.readthedocs.io/en/stable/) to aid in the development and testing of Ansible roles and [docker systemctl replacement](https://github.com/gdraheim/docker-systemctl-replacement) script to execute systemctl commands without systemd.
 
 ## Usage
 
