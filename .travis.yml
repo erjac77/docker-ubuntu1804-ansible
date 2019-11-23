@@ -15,8 +15,8 @@ script:
   # Build the image
   - docker build -t docker-ansible .
   # Run a container from the image
-  - docker run -d --name ansible-container docker-ansible
+  - docker run -d --name ansible-container --privileged docker-ansible
   # Verify Ansible
-  - docker exec --tty ansible-container env TERM=xterm ansible --version
+  - docker exec -it ansible-container ansible --version
   # Verify systemctl
-  - systemctl list-units
+  - docker exec -it ansible-container systemctl list-units

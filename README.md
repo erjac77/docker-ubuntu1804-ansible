@@ -1,4 +1,4 @@
-# Docker Container Image: Ubuntu 18.04 LTS (Bionic) with Ansible and Molecule
+# Docker Container Image: Ubuntu 18.04 LTS (Bionic) with Ansible
 
 [![Build Status](https://travis-ci.com/erjac77/docker-ubuntu1804-ansible.svg?branch=master)](https://travis-ci.com/erjac77/docker-ubuntu1804-ansible)
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/erjac77/docker-ubuntu1804-ansible.svg)](https://hub.docker.com/r/erjac77/docker-ubuntu1804-ansible)
@@ -18,13 +18,13 @@ A Ubuntu 18.04 LTS (Bionic) Docker container image for Ansible playbook and role
 
 3. Run a container using the image.
 
-   `docker run -d --name [container_name] erjac77/docker-ubuntu1804-ansible:latest`
+   `docker run -d --name [container_name] --privileged erjac77/docker-ubuntu1804-ansible:latest`
 
-4. Use Ansible/Molecule inside the container.
+4. Use Ansible inside the container.
 
-   a. `docker exec --tty [container_name] env TERM=xterm ansible --version`
+   a. `docker exec -it [container_name] ansible --version`
 
-   b. `docker exec --tty [container_name] env TERM=xterm ansible-playbook /path/to/ansible/playbook.yml`
+   b. `docker exec -it [container_name] ansible-playbook /path/to/ansible/playbook.yml`
 
 ## Warnings
 
