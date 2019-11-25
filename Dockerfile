@@ -2,13 +2,12 @@ FROM ubuntu:18.04
 
 LABEL maintainer="Eric Jacob"
 
-# Update APT cache and install dependencies
+# Update APT cache and install Ansible
 RUN apt-get update
-RUN apt-get install -y python sudo bash ca-certificates iproute2 python-pip
+RUN apt-get install software-properties-common
+RUN apt-add-repository --yes --update ppa:ansible/ansible
+RUN apt-get install ansible
 RUN apt-get clean
-
-# Install Ansible via pip
-RUN pip install ansible
 
 # Copy Docker systemctl replacement script
 # to execute systemctl commands without systemd
