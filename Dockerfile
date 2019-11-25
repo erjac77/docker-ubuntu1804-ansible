@@ -4,9 +4,9 @@ LABEL maintainer="Eric Jacob"
 
 # Update APT cache and install Ansible
 RUN apt-get update
-RUN apt-get install software-properties-common
+RUN apt-get install -y software-properties-common
 RUN apt-add-repository --yes --update ppa:ansible/ansible
-RUN apt-get install ansible
+RUN apt-get install -y ansible
 RUN apt-get clean
 
 # Copy Docker systemctl replacement script
