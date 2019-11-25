@@ -1,11 +1,10 @@
 FROM ubuntu:18.04
-
-LABEL maintainer="Eric Jacob"
+LABEL maintainer="Eric Jacob (@erjac77)"
 
 # Update APT cache and install Ansible
 RUN apt-get update
 RUN apt-get install -y software-properties-common
-RUN apt-add-repository --yes --update ppa:ansible/ansible
+RUN apt-add-repository -y -u ppa:ansible/ansible
 RUN apt-get install -y ansible
 RUN apt-get clean
 
@@ -14,7 +13,7 @@ RUN apt-get clean
 COPY files/docker/systemctl.py /usr/bin/systemctl
 RUN chmod +x /usr/bin/systemctl
 
-# Create default inventory file
+# Create Ansible inventory file
 RUN mkdir -p /etc/ansible
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
